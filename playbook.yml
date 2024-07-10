@@ -1,6 +1,10 @@
 - name: Simple playbook
   hosts: all
   tasks:
-    - name: Debug playbook
+    - name: List Jobs from Automation Controller
+      ansible.controller.job_list:
+        status: successful
+      register: joblist
+    - name: Debug joblist
       ansible.builtin.debug:
-        msg: Working
+        var: joblist
