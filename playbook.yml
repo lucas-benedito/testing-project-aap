@@ -3,6 +3,10 @@
   tasks:
     - name: List Jobs from Automation Controller
       ansible.controller.job_list:
+        controller_username: "{{ CONTROLLER_USERNAME }}"
+        controller_password: "{{ CONTROLLER_PASSWORD }}"
+        controller_host: "{{ CONTROLLER_HOST }}"
+        validate_certs: "{{ CONTROLLER_VERIFY_SSL }}"
         status: successful
       register: joblist
     - name: Debug joblist
