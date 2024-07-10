@@ -1,0 +1,6 @@
+- name: Simple playbook
+  hosts: all
+  tasks:
+    - name: Debug playbook
+      ansible.builtin.debug:
+        msg: Working
